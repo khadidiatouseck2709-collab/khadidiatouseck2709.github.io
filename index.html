@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prénom NOM – Étudiant en BUT GEII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#eef3f7;--ink:#14263a;--soft:#4d6074;--blue:#1f5bff;--amber:#f2a900;--card:#fff;--line:#cfdae4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:1.05rem/1.6 "Source Sans 3",system-ui,sans-serif;color:var(--ink);background:var(--paper);display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.1;margin:0 0 .6em}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+nav{position:sticky;top:0;height:100vh;overflow:auto;background:var(--ink);color:#fff;padding:1.5rem 1rem}
+nav .brand{font:800 1.3rem Archivo,sans-serif;margin:0 .5rem 1.2rem}
+nav a{display:block;color:#dbe6f2;text-decoration:none;padding:.45rem .7rem;border-radius:6px;font-weight:600}
+nav a:hover{background:rgba(255,255,255,.1)}
+nav a.on{background:var(--amber);color:var(--ink)}
+nav a.cv{margin-top:1rem;border:2px solid var(--amber)}
+.menu-btn{display:none}
+main{padding:3rem clamp(1.2rem,5vw,4rem);max-width:60rem}
+.page{display:none}
+.page.show{display:block}
+h2{font-size:2.2rem;padding-bottom:.4em;border-bottom:4px solid var(--blue);display:inline-block}
+.item{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--blue);padding:1rem 1.2rem;margin:0 0 1rem;border-radius:4px}
+.item h3{font-size:1.15rem;margin-bottom:.2em}
+.item small{color:var(--soft)}
+.hero{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.photo{width:170px;height:170px;border-radius:50%;background:var(--ink);color:var(--amber);display:grid;place-items:center;font:800 3rem Archivo,sans-serif;flex:none;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);margin-bottom:.15em}
+.hero p{margin:0;font-size:1.25rem;color:var(--soft)}
+.wave{width:100%;height:60px;margin:1.5rem 0 .5rem}
+.wave path{fill:none;stroke:var(--blue);stroke-width:3;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
+.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.tags li{background:var(--ink);color:#fff;padding:.25rem .8rem;border-radius:99px;font-size:.95rem}
+.btn{display:inline-block;background:var(--blue);color:#fff;padding:.8rem 1.4rem;border-radius:6px;font-weight:600;text-decoration:none}
+.btn:hover{background:var(--ink)}
+@media(max-width:800px){
+ body{grid-template-columns:1fr}
+ nav{position:static;height:auto;padding:.8rem 1rem}
+ nav .links{display:none;margin-top:.8rem}
+ nav .links.open{display:block}
+ .menu-btn{display:block;background:var(--amber);color:var(--ink);border:0;border-radius:6px;padding:.5rem 1rem;font:700 1rem Archivo,sans-serif;margin:.5rem}
+ .top{display:flex;align-items:center;justify-content:space-between}
+ nav .brand{margin:0 .5rem}
+}
+@media(prefers-reduced-motion:reduce){.wave path{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Menu principal">
+ <div class="top"><div class="brand">Prénom NOM</div><button class="menu-btn" id="btn" aria-expanded="false">Menu</button></div>
+ <div class="links" id="links">
+  <a href="#accueil">Accueil</a>
+  <a href="#infos">Informations personnelles</a>
+  <a href="#formations">Formations</a>
+  <a href="#experiences">Expériences professionnelles</a>
+  <a href="#projets">Projets</a>
+  <a href="#langues">Compétences linguistiques</a>
+  <a href="#informatique">Compétences informatiques</a>
+  <a href="#pro">Compétences professionnelles</a>
+  <a href="#sports">Sports</a>
+  <a href="#hobbies">Hobbies</a>
+  <a href="#asso">Vie associative</a>
+  <a class="cv" href="cv.pdf" download>Télécharger mon CV</a>
+ </div>
+</nav>
+
+<main>
+
+<!-- ACCUEIL -->
+<section class="page" id="accueil">
+ <div class="hero">
+  <div class="photo" aria-label="Photo (facultative)">PN<!-- Pour ta photo : remplace PN par <img src="photo.jpg" alt="Portrait de Prénom NOM"> --></div>
+  <div>
+   <h1>Prénom NOM</h1>
+   <p>Étudiant en BUT Génie Électrique et Informatique Industrielle (GEII)</p>
+  </div>
+ </div>
+ <svg class="wave" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q25 0 50 30 T100 30 T150 30 T200 30 T250 30 T300 30 T350 30 T400 30 T450 30 T500 30 T550 30 T600 30 T650 30 T700 30 T750 30 T800 30"/></svg>
+
+ <h2>Domaine de compétences</h2>
+ <p>Électronique, automatisme et informatique industrielle. Je conçois, programme et mets en service des systèmes électriques et automatisés. <em>(À adapter.)</em></p>
+
+ <div class="cols">
+  <div class="item"><h3>Points forts</h3>
+   <ul><li>Rigoureux et méthodique</li><li>Esprit d'équipe</li><li>Curieux, j'apprends vite</li></ul></div>
+  <div class="item"><h3>Compétences clés</h3>
+   <ul><li>Programmation d'automates</li><li>Électronique analogique et numérique</li><li>Programmation C / Python</li></ul></div>
+ </div>
+ <p><a class="btn" href="cv.pdf" download>Télécharger mon CV</a></p>
+</section>
+
+<!-- 1 INFOS PERSO -->
+<section class="page" id="infos">
+ <h2>Informations personnelles</h2>
+ <div class="item"><h3>Prénom NOM</h3>
+  <p>Âge : XX ans<br>Ville : Ta ville<br>E-mail : <a href="mailto:prenom.nom@email.fr">prenom.nom@email.fr</a><br>Téléphone : 06 00 00 00 00<br>LinkedIn : <a href="https://www.linkedin.com/" target="_blank" rel="noopener">mon profil</a></p></div>
+ <p>Permis B : oui / non · Mobilité : à préciser</p>
+</section>
+
+<!-- 2 FORMATIONS -->
+<section class="page" id="formations">
+ <h2>Formations</h2>
+ <div class="item"><h3>BUT GEII (2e année) <small>2025 – 2026</small></h3>
+  <p><a href="https://www.univ-exemple.fr" target="_blank" rel="noopener">Nom de ton IUT / université</a> – parcours : à préciser</p></div>
+ <div class="item"><h3>BUT GEII (1re année) <small>2024 – 2025</small></h3>
+  <p>Validée. Électronique, électrotechnique, automatisme, programmation.</p></div>
+ <div class="item"><h3>Baccalauréat <small>année</small></h3>
+  <p><a href="https://www.exemple-lycee.fr" target="_blank" rel="noopener">Nom du lycée</a> – série / spécialités, mention</p></div>
+</section>
+
+<!-- 3 EXPERIENCES -->
+<section class="page" id="experiences">
+ <h2>Expériences professionnelles</h2>
+ <div class="item"><h3>Stage / job – Nom de l'entreprise <small>mois année, durée</small></h3>
+  <p>Missions : ce que tu as fait, avec quels outils, quel résultat.<br><a href="https://www.exemple-entreprise.fr" target="_blank" rel="noopener">Site de l'entreprise</a></p></div>
+ <div class="item"><h3>Job d'été – Nom de l'employeur <small>période</small></h3>
+  <p>Ce que ce travail t'a appris (autonomie, service client, ponctualité…).</p></div>
+</section>
+
+<!-- 4 PROJETS -->
+<section class="page" id="projets">
+ <h2>Projets</h2>
+ <div class="item"><h3>Projet 1 – Titre <small>BUT1 / SAÉ</small></h3>
+  <p>Objectif, matériel et logiciels utilisés, ton rôle, résultat. <a href="rapport-projet1.pdf" download>Télécharger le rapport</a></p></div>
+ <div class="item"><h3>Projet 2 – Titre</h3>
+  <p>Exemples GEII : variateur de vitesse, station météo Arduino, automate Siemens/Schneider, carte électronique sous KiCad.</p></div>
+</section>
+
+<!-- 5 LANGUES -->
+<section class="page" id="langues">
+ <h2>Compétences linguistiques</h2>
+ <div class="item"><h3>Français</h3><p>Langue maternelle</p></div>
+ <div class="item"><h3>Anglais</h3><p>Niveau B1/B2 – TOEIC, lecture de documentation technique</p></div>
+ <div class="item"><h3>Autre langue</h3><p>Niveau scolaire</p></div>
+</section>
+
+<!-- 6 INFORMATIQUE -->
+<section class="page" id="informatique">
+ <h2>Compétences informatiques</h2>
+ <h3>Programmation</h3>
+ <ul class="tags"><li>C</li><li>Python</li><li>Arduino</li><li>HTML/CSS</li></ul>
+ <h3>Automatisme et électronique</h3>
+ <ul class="tags"><li>TIA Portal</li><li>GRAFCET</li><li>LabVIEW</li><li>KiCad</li><li>Proteus</li></ul>
+ <h3>Bureautique</h3>
+ <ul class="tags"><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>
+ <p><small>Garde uniquement ce que tu sais vraiment utiliser.</small></p>
+</section>
+
+<!-- 7 PRO -->
+<section class="page" id="pro">
+ <h2>Compétences professionnelles</h2>
+ <div class="cols">
+  <div class="item"><h3>Techniques</h3><p>Câblage et mise en service, dépannage, lecture de schémas, mesures.</p></div>
+  <div class="item"><h3>Relationnelles</h3><p>Travail en équipe, communication, présentation orale.</p></div>
+  <div class="item"><h3>Organisation</h3><p>Gestion de projet, respect des délais, rédaction de rapports.</p></div>
+ </div>
+</section>
+
+<!-- 8 SPORTS -->
+<section class="page" id="sports">
+ <h2>Sports</h2>
+ <div class="item"><h3>Ton sport</h3><p>Depuis combien de temps, niveau, ce que ça t'apporte (esprit d'équipe, persévérance).</p></div>
+</section>
+
+<!-- 9 HOBBIES -->
+<section class="page" id="hobbies">
+ <h2>Hobbies</h2>
+ <div class="item"><h3>Ton hobby</h3><p>Électronique, jeux vidéo, musique, photo… Explique en une phrase.</p></div>
+</section>
+
+<!-- 10 ASSO -->
+<section class="page" id="asso">
+ <h2>Vie associative</h2>
+ <div class="item"><h3>Association / BDE / club <small>rôle, période</small></h3><p>Ce que tu y fais et ce que tu as appris. <a href="https://www.exemple-asso.fr" target="_blank" rel="noopener">Lien vers l'association</a></p></div>
+</section>
+
+</main>
+
+<script>
+var pages=document.querySelectorAll('.page'),links=document.querySelectorAll('nav .links a:not(.cv)');
+function show(){
+ var id=location.hash.slice(1)||'accueil';
+ if(!document.getElementById(id))id='accueil';
+ pages.forEach(function(p){p.classList.toggle('show',p.id===id)});
+ links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});
+ document.getElementById('links').classList.remove('open');
+ document.getElementById('btn').setAttribute('aria-expanded','false');
+ window.scrollTo(0,0);
+}
+document.getElementById('btn').addEventListener('click',function(){
+ var l=document.getElementById('links'),o=l.classList.toggle('open');
+ this.setAttribute('aria-expanded',o);
+});
+window.addEventListener('hashchange',show);show();
+</script>
+</body>
+</html>
