@@ -5,226 +5,280 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Khadidiatou Seck – Étudiante en BUT GEII</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#eef3f7;--ink:#14263a;--soft:#4d6074;--blue:#1f5bff;--amber:#f2a900;--card:#fff;--line:#cfdae4}
+:root{--board:#0f4a3c;--ink:#12211d;--soft:#4b5f58;--paper:#f2f5f3;--white:#fff;--gold:#d4a017;--line:#d3ddd8}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font:1.05rem/1.6 "Source Sans 3",system-ui,sans-serif;color:var(--ink);background:var(--paper);display:grid;grid-template-columns:270px 1fr;min-height:100vh}
-h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.1;margin:0 0 .6em}
-a{color:var(--blue)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
-nav{position:sticky;top:0;height:100vh;overflow:auto;background:var(--ink);color:#fff;padding:1.5rem 1rem}
-nav .brand{font:800 1.3rem Archivo,sans-serif;margin:0 .5rem 1.2rem}
-nav a{display:block;color:#dbe6f2;text-decoration:none;padding:.45rem .7rem;border-radius:6px;font-weight:600}
-nav a:hover{background:rgba(255,255,255,.1)}
-nav a.on{background:var(--amber);color:var(--ink)}
-nav a.cv{margin-top:1rem;border:2px solid var(--amber)}
-.menu-btn{display:none}
-main{padding:3rem clamp(1.2rem,5vw,4rem);max-width:60rem}
-.page{display:none}
-.page.show{display:block}
-h2{font-size:2.2rem;padding-bottom:.4em;border-bottom:4px solid var(--blue);display:inline-block}
-.item{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--blue);padding:1rem 1.2rem;margin:0 0 1rem;border-radius:4px}
-.item h3{font-size:1.15rem;margin-bottom:.2em}
-.item small{color:var(--soft)}
-.hero{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
-.photo{width:170px;height:170px;border-radius:50%;background:var(--ink);color:var(--amber);display:grid;place-items:center;font:800 3rem Archivo,sans-serif;flex:none;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover}
-.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:.15em}
-.hero p{margin:0;font-size:1.2rem;color:var(--soft)}
-.wave{width:100%;height:60px;margin:1.5rem 0 .5rem}
-.wave path{fill:none;stroke:var(--blue);stroke-width:3;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.2s ease-out forwards}
+body{margin:0;font:1.02rem/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;line-height:1.1}
+a{color:var(--board)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--line)}
+.bar{max-width:72rem;margin:0 auto;padding:.7rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand{font:800 1.25rem "Bricolage Grotesque",sans-serif;color:var(--board);text-decoration:none;margin-right:auto}
+.menu-btn{display:none;background:var(--board);color:#fff;border:0;border-radius:8px;padding:.5rem 1rem;font:600 1rem "IBM Plex Sans",sans-serif}
+nav{width:100%;display:flex;flex-wrap:wrap;gap:.1rem .25rem}
+nav a{text-decoration:none;color:var(--ink);font-size:.92rem;font-weight:500;padding:.4rem .6rem;border-bottom:3px solid transparent}
+nav a:hover{border-color:var(--line)}
+nav a.on{border-color:var(--gold);font-weight:600;color:var(--board)}
+.dl{background:var(--gold);color:var(--ink);font-weight:600;text-decoration:none;padding:.55rem 1.1rem;border-radius:8px}
+.dl:hover{background:var(--ink);color:#fff}
+main{max-width:72rem;margin:0 auto;padding:0 1.5rem 3rem}
+.page{display:none}.page.show{display:block}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding:3.5rem 0 2.5rem}
+.hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:800;color:var(--board);letter-spacing:-.02em}
+.role{font-size:1.2rem;font-weight:600;margin:1rem 0 .6rem}
+.hero p{max-width:34rem;color:var(--soft);margin:0 0 1.2rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:8px;font-weight:600;text-decoration:none;background:var(--board);color:#fff}
+.btn.alt{background:transparent;color:var(--board);border:2px solid var(--board)}
+.btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.frame{position:relative;justify-self:center;width:min(100%,22rem)}
+.frame::before{content:"";position:absolute;inset:1.2rem -1.2rem -1.2rem 1.2rem;background:var(--board);border-radius:18px}
+.frame::after{content:"";position:absolute;right:-.4rem;top:-.4rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--gold);border:5px solid var(--paper)}
+.frame img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:var(--line)}
+.band{background:var(--board);color:#fff;border-radius:20px;padding:2rem 2rem 2.2rem;margin-bottom:2.5rem;overflow:hidden}
+.wave{display:block;width:100%;height:46px;margin-bottom:1.2rem}
+.wave path{fill:none;stroke:var(--gold);stroke-width:3;stroke-dasharray:1500;stroke-dashoffset:1500;animation:draw 2.4s ease-out forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem}
-.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
-.tags li{background:var(--ink);color:#fff;padding:.25rem .8rem;border-radius:99px;font-size:.95rem}
-.btn{display:inline-block;background:var(--blue);color:#fff;padding:.8rem 1.4rem;border-radius:6px;font-weight:600;text-decoration:none}
-.btn:hover{background:var(--ink)}
-.shot{width:100%;max-width:420px;display:block;border-radius:6px;border:1px solid var(--line);margin:.6rem 0}
-@media(max-width:800px){
- body{grid-template-columns:1fr}
- nav{position:static;height:auto;padding:.8rem 1rem}
- nav .links{display:none;margin-top:.8rem}
- nav .links.open{display:block}
- .menu-btn{display:block;background:var(--amber);color:var(--ink);border:0;border-radius:6px;padding:.5rem 1rem;font:700 1rem Archivo,sans-serif;margin:.5rem}
- .top{display:flex;align-items:center;justify-content:space-between}
- nav .brand{margin:0 .5rem}
+.band h2{font-size:1.5rem;margin-bottom:1rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem}
+.skills h3{font-size:1.05rem;color:var(--gold);margin-bottom:.3rem}
+.skills p{margin:0;font-size:.95rem;color:#d9e8e2}
+.strengths{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem}
+.strengths div{border-top:4px solid var(--gold);padding-top:.8rem}
+.strengths h3{font-size:1.1rem;margin-bottom:.3rem}
+.strengths p{margin:0;color:var(--soft)}
+.head{padding:3rem 0 1.8rem;max-width:44rem}
+.head h2{font-size:clamp(2rem,5vw,3rem);color:var(--board);font-weight:800}
+.head h2::after{content:"";display:block;width:4rem;height:5px;background:var(--gold);margin-top:.8rem;border-radius:3px}
+.head p{color:var(--soft);margin:1rem 0 0}
+.box{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:1.2rem}
+.box h3{font-size:1.25rem;margin-bottom:.4rem}
+.box p{margin:.3rem 0}
+.when{display:inline-block;font-weight:600;font-size:.9rem;color:var(--board);background:#e1ece7;border-radius:99px;padding:.1rem .7rem;margin-bottom:.5rem}
+.tl{list-style:none;margin:0;padding:0 0 0 2rem;border-left:3px solid var(--board)}
+.tl li{position:relative;margin-bottom:1.6rem}
+.tl li::before{content:"";position:absolute;left:-2.62rem;top:.35rem;width:1rem;height:1rem;border-radius:50%;background:var(--gold);border:3px solid var(--paper)}
+.tl h3{font-size:1.2rem}
+.tl p{margin:.3rem 0 0;color:var(--soft)}
+.proj{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.8rem;margin-bottom:1.6rem}
+.proj h3{font-size:1.4rem;margin-bottom:.3rem}
+.proj .tag{color:var(--board);font-weight:600;font-size:.92rem;margin:0 0 .8rem}
+.proj ul,.box ul{padding-left:1.1rem;margin:.6rem 0 0}
+.proj li,.box li{margin-bottom:.35rem}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;align-content:start}
+.gal img{width:100%;height:100%;min-height:9rem;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.gal img:first-child{grid-column:1/-1;aspect-ratio:16/10}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.2rem}
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:.6rem 0 0}
+.tags li{background:#e1ece7;color:var(--board);font-weight:500;font-size:.93rem;padding:.25rem .8rem;border-radius:99px}
+.soon{border-style:dashed;color:var(--soft)}
+footer{background:var(--ink);color:#cfe0d9;text-align:center;padding:1.8rem 1rem;font-size:.95rem}
+footer a{color:var(--gold)}
+@media(max-width:900px){
+ .menu-btn{display:block}
+ nav{display:none;flex-direction:column}nav.open{display:flex}
+ .dl{display:none}
+ .hero,.proj{grid-template-columns:1fr}
+ .hero{padding-top:2rem;gap:2.5rem}
+ .frame{order:-1;width:min(70%,16rem);margin-right:1.2rem}
 }
 @media(prefers-reduced-motion:reduce){.wave path{animation:none;stroke-dashoffset:0}}
 </style>
 </head>
 <body>
-
-<nav aria-label="Menu principal">
- <div class="top"><div class="brand">Khadidiatou Seck</div><button class="menu-btn" id="btn" aria-expanded="false">Menu</button></div>
- <div class="links" id="links">
-  <a href="#accueil">Accueil</a>
-  <a href="#infos">Informations personnelles</a>
-  <a href="#formations">Formations</a>
-  <a href="#experiences">Expériences professionnelles</a>
-  <a href="#projets">Projets</a>
-  <a href="#langues">Compétences linguistiques</a>
-  <a href="#informatique">Compétences informatiques</a>
-  <a href="#pro">Compétences professionnelles</a>
-  <a href="#sports">Sports</a>
-  <a href="#hobbies">Hobbies</a>
-  <a href="#asso">Vie associative</a>
-  <a class="cv" href="cv.pdf" download>Télécharger mon CV</a>
+<header>
+ <div class="bar">
+  <a class="brand" href="#accueil">Khadidiatou Seck</a>
+  <a class="dl" href="cv.pdf" download>Télécharger mon CV</a>
+  <button class="menu-btn" id="btn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav id="menu" aria-label="Menu principal">
+   <a href="#accueil">Accueil</a>
+   <a href="#infos">Informations personnelles</a>
+   <a href="#formations">Formations</a>
+   <a href="#experiences">Expériences</a>
+   <a href="#projets">Projets</a>
+   <a href="#langues">Langues</a>
+   <a href="#informatique">Compétences informatiques</a>
+   <a href="#pro">Compétences professionnelles</a>
+   <a href="#sports">Sports</a>
+   <a href="#hobbies">Hobbies</a>
+   <a href="#asso">Vie associative</a>
+   <a href="cv.pdf" download>Télécharger mon CV</a>
+  </nav>
  </div>
-</nav>
+</header>
 
 <main>
-
-<!-- ACCUEIL -->
 <section class="page" id="accueil">
  <div class="hero">
-  <div class="photo" aria-label="Photo (facultative)">KS<!-- Pour ta photo : remplace KS par <img src="photo.jpg" alt="Portrait de Khadidiatou Seck"> --></div>
   <div>
    <h1>Khadidiatou Seck</h1>
-   <p>Étudiante en 2<sup>e</sup> année de BUT GEII, parcours Électronique &amp; Systèmes Embarqués</p>
+   <p class="role">Étudiante en 2<sup>e</sup> année de BUT GEII, parcours Électronique et Systèmes Embarqués</p>
+   <p>Je conçois, fabrique et teste des systèmes électroniques, de la carte au code. Je recherche un stage de 8 semaines à partir d’avril 2027, partout en France.</p>
+   <div class="btns">
+    <a class="btn" href="cv.pdf" download>Télécharger mon CV</a>
+    <a class="btn alt" href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai" target="_blank" rel="noopener">Voir mon portfolio</a>
+   </div>
+  </div>
+  <div class="frame"><img src="photo.jpg" alt="Portrait de Khadidiatou Seck"></div>
+ </div>
+
+ <div class="band">
+  <svg class="wave" viewBox="0 0 800 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 23 H80 Q100 2 120 23 T160 23 H250 V5 H330 V41 H410 V23 H500 Q525 0 550 23 T600 23 H680 V5 H720 V41 H760 V23 H800"/></svg>
+  <h2>Mon domaine de compétences</h2>
+  <div class="skills">
+   <div><h3>Électronique</h3><p>Schéma et PCB sous KiCad, fabrication, soudure, tests à l’oscilloscope.</p></div>
+   <div><h3>Systèmes embarqués</h3><p>C sur PIC24F, VHDL sur FPGA, Arduino.</p></div>
+   <div><h3>Réseaux</h3><p>LAN/Ethernet, câblage RJ45, diagnostic réseau.</p></div>
+   <div><h3>Automatisme</h3><p>Automates Siemens, TIA Portal, Grafcet.</p></div>
   </div>
  </div>
- <svg class="wave" viewBox="0 0 800 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q25 0 50 30 T100 30 T150 30 T200 30 T250 30 T300 30 T350 30 T400 30 T450 30 T500 30 T550 30 T600 30 T650 30 T700 30 T750 30 T800 30"/></svg>
 
- <h2>Domaine de compétences</h2>
- <p>Électronique, systèmes embarqués et réseaux. Je recherche un stage de 8 semaines à partir d'avril 2027, mobile partout en France, avec un intérêt particulier pour les environnements LAN/Ethernet et les systèmes communicants.</p>
-
- <div class="cols">
-  <div class="item"><h3>Points forts</h3>
-   <ul><li>Rigoureuse et méthodique</li><li>Autonome sur des projets électronique/embarqué de bout en bout</li><li>À l'aise pour intégrer capteur, microcontrôleur, automate et électrotechnique</li></ul></div>
-  <div class="item"><h3>Compétences clés</h3>
-   <ul><li>Programmation C sur microcontrôleur PIC24F (MPLAB X)</li><li>Conception et routage de cartes sous KiCad</li><li>VHDL / FPGA (Artix-7, Basys3, Vivado)</li></ul></div>
+ <h2 style="font-size:1.6rem;margin-bottom:1.2rem">Mes points forts</h2>
+ <div class="strengths">
+  <div><h3>Rigoureuse</h3><p>Méthode pas à pas : vérification hors tension, puis tests.</p></div>
+  <div><h3>Autonome</h3><p>Je mène un projet de la conception à la mise en service.</p></div>
+  <div><h3>Polyvalente</h3><p>Je relie capteur, microcontrôleur, automate et électrotechnique.</p></div>
  </div>
- <p><a class="btn" href="cv.pdf" download>Télécharger mon CV</a></p>
 </section>
 
-<!-- 1 INFOS PERSO -->
 <section class="page" id="infos">
- <h2>Informations personnelles</h2>
- <div class="item"><h3>Khadidiatou Seck</h3>
-  <p>Ville : Calais, France<br>Téléphone : 07 59 40 21 33<br>E-mail : <a href="mailto:khadidiatou.seck@etu.univ-littoral.fr">khadidiatou.seck@etu.univ-littoral.fr</a></p></div>
- <div class="item"><h3>Recherche de stage</h3>
-  <p>Avril 2027 · 8 semaines · Mobilité nationale</p></div>
-</section>
-
-<!-- 2 FORMATIONS -->
-<section class="page" id="formations">
- <h2>Formations</h2>
- <div class="item"><h3>BUT Génie Électrique et Informatique Industrielle (GEII) <small>2025 – 2027</small></h3>
-  <p>Parcours Électronique et Systèmes Embarqués – IUT de l'Université du Littoral Côte d'Opale, Calais. Actuellement en 2<sup>e</sup> année.<br><a href="https://www.univ-littoral.fr" target="_blank" rel="noopener">Site de l'université</a></p></div>
- <div class="item"><h3>Licence 1 Systèmes Réseaux &amp; Télécommunications <small>2024 – 2025, semestre 1</small></h3>
-  <p>Université Alioune Diop de Bambey.<br><a href="https://uadb.edu.sn" target="_blank" rel="noopener">Site de l'université</a></p></div>
- <div class="item"><h3>Baccalauréat scientifique, sciences expérimentales <small>2024</small></h3>
-  <p>Lycée Plan Jaxaay, Dakar, Sénégal</p></div>
-</section>
-
-<!-- 3 EXPERIENCES -->
-<section class="page" id="experiences">
- <h2>Expériences professionnelles</h2>
- <div class="item"><h3>Recherche de stage – avril 2027</h3>
-  <p>8 semaines, mobilité nationale. Je souhaite mettre en pratique mes compétences en électronique, systèmes embarqués et réseaux.</p></div>
- <p><em>Section à compléter au fil de mes stages et expériences professionnelles.</em></p>
-</section>
-
-<!-- 4 PROJETS -->
-<section class="page" id="projets">
- <h2>Projets</h2>
- <div class="item"><h3>SAE 2 – Système automatisé de volet roulant <small>Automatisme · Électronique · Électrotechnique · Embarqué</small></h3>
-  <!-- Pour ajouter une photo de ce projet, remplace la ligne ci-dessous par : <img class="shot" src="projet-sae2.jpg" alt="Photo du projet volet roulant"> -->
-  <ul>
-   <li>Conception et réalisation d'un système de montée/descente automatisée d'un volet roulant</li>
-   <li>Câblage de la partie électrotechnique de la maquette et programmation d'un automate Siemens avec TIA Portal</li>
-   <li>Programmation en C sous MPLAB X d'un microcontrôleur PIC24F : lecture du capteur/anémomètre et commande des sorties</li>
-   <li>Conception de la partie électronique de l'anémomètre et déclenchement de la montée/descente selon le vent</li>
-   <li>Intégration des parties capteur, électronique, microcontrôleur, automate et électrotechnique</li>
-  </ul></div>
- <div class="item"><h3>SAE 1.01 – Minuteur électronique pour la cuisson d'œufs <small>Électronique · FPGA · VHDL · PCB</small></h3>
-  <!-- Pour ajouter une photo de ce projet, remplace la ligne ci-dessous par : <img class="shot" src="projet-sae101.jpg" alt="Photo du projet minuteur électronique"> -->
-  <ul>
-   <li>Conception du schéma électronique et routage du PCB sous KiCad</li>
-   <li>Fabrication, soudure et test de la carte électronique</li>
-   <li>Programmation du minuteur en VHDL et développement/test sur FPGA Artix-7 / Basys3 avec Vivado</li>
-  </ul></div>
- <div class="item"><h3>SAE 3.01 – Système d'acquisition de température <small>Projet en cours · Électronique · Arduino</small></h3>
-  <!-- Pour ajouter une photo de ce projet, remplace la ligne ci-dessous par : <img class="shot" src="projet-sae301.jpg" alt="Photo du projet système d'acquisition de température"> -->
-  <ul>
-   <li>Étude et réalisation d'un système d'acquisition de température avec capteur LM35</li>
-   <li>Mise en œuvre d'un Arduino et étude de la chaîne d'acquisition et des signaux associés</li>
-  </ul></div>
-</section>
-
-<!-- 5 LANGUES -->
-<section class="page" id="langues">
- <h2>Compétences linguistiques</h2>
- <div class="item"><h3>Français</h3><p>Langue maternelle</p></div>
- <div class="item"><h3>Anglais</h3><p>Lu et technique – lecture de documentation technique</p></div>
-</section>
-
-<!-- 6 INFORMATIQUE -->
-<section class="page" id="informatique">
- <h2>Compétences informatiques</h2>
- <h3>Électronique</h3>
- <ul class="tags"><li>KiCad (schéma/PCB)</li><li>Fabrication &amp; soudure</li><li>Oscilloscope</li><li>Multimètre</li><li>Chaînes d'acquisition</li><li>Étude de signaux</li></ul>
- <h3>Systèmes embarqués</h3>
- <ul class="tags"><li>C</li><li>PIC24F</li><li>MPLAB X</li><li>VHDL</li><li>FPGA Artix-7 / Basys3</li><li>Vivado</li><li>Arduino</li></ul>
- <h3>Réseaux &amp; télécommunications</h3>
- <ul class="tags"><li>LAN/Ethernet</li><li>Câblage &amp; sertissage RJ45</li><li>IPv4</li><li>ping / ipconfig / netsh</li><li>PuTTY</li><li>Notions de cybersécurité</li></ul>
- <h3>Automatisme &amp; régulation</h3>
- <ul class="tags"><li>Automates Siemens</li><li>TIA Portal</li><li>Grafcet/SFC</li><li>Câblage électrotechnique</li><li>Scilab</li></ul>
- <h3>Simulation &amp; informatique</h3>
- <ul class="tags"><li>Python</li><li>PSIM</li><li>Excel</li><li>Word</li><li>PowerPoint</li></ul>
-</section>
-
-<!-- 7 PRO -->
-<section class="page" id="pro">
- <h2>Compétences professionnelles</h2>
+ <div class="head"><h2>Informations personnelles</h2></div>
  <div class="cols">
-  <div class="item"><h3>Techniques</h3><p>Conception et routage de cartes électroniques, câblage et mise en service, programmation de microcontrôleurs et FPGA, diagnostic réseau.</p></div>
-  <div class="item"><h3>Relationnelles</h3><p>Soutien scolaire pendant 4 ans, mise en place d'une association – travail en équipe et sens du relationnel.</p></div>
-  <div class="item"><h3>Organisation</h3><p>Conduite de projets académiques (SAE) de bout en bout, de la conception à l'intégration.</p></div>
+  <div class="box"><h3>Contact</h3><p>Calais, France<br>07 59 40 21 33<br><a href="mailto:khadidiatou.seck@etu.univ-littoral.fr">khadidiatou.seck@etu.univ-littoral.fr</a></p></div>
+  <div class="box"><h3>Recherche de stage</h3><p>Avril 2027, 8 semaines, mobilité partout en France.</p><p>Intérêt particulier : LAN/Ethernet et systèmes communicants.</p></div>
  </div>
 </section>
 
-<!-- 8 SPORTS -->
+<section class="page" id="formations">
+ <div class="head"><h2>Formations</h2></div>
+ <ul class="tl">
+  <li><span class="when">2025 – 2027</span><h3>BUT Génie Électrique et Informatique Industrielle</h3><p>Parcours Électronique et Systèmes Embarqués, IUT de l’Université du Littoral Côte d’Opale, Calais. Actuellement en 2<sup>e</sup> année. <a href="https://www.univ-littoral.fr" target="_blank" rel="noopener">Site de l’université</a></p></li>
+  <li><span class="when">2024 – 2025</span><h3>Licence 1 Systèmes Réseaux et Télécommunications</h3><p>Université Alioune Diop de Bambey, semestre 1. <a href="https://uadb.edu.sn" target="_blank" rel="noopener">Site de l’université</a></p></li>
+  <li><span class="when">2024</span><h3>Baccalauréat scientifique, sciences expérimentales</h3><p>Lycée Plan Jaxaay, Dakar, Sénégal.</p></li>
+ </ul>
+</section>
+
+<section class="page" id="experiences">
+ <div class="head"><h2>Expériences professionnelles</h2></div>
+ <div class="box"><span class="when">Avril 2027</span><h3>Stage recherché, 8 semaines</h3><p>Je souhaite mettre en pratique mes compétences en électronique, systèmes embarqués et réseaux.</p></div>
+ <div class="box soon"><p>Cette page s’enrichira avec mes prochains stages et expériences.</p></div>
+</section>
+
+<section class="page" id="projets">
+ <div class="head"><h2>Projets</h2><p>Le détail pas à pas de chaque SAE est sur mon <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai" target="_blank" rel="noopener">portfolio</a>.</p></div>
+
+ <article class="proj">
+  <div><h3>SAE 2 : volet roulant automatisé</h3><p class="tag">Automatisme, électronique, électrotechnique, embarqué</p>
+   <p>Automatisation d’un volet roulant : câblage, mesure du vent par anémomètre et commande de la montée et de la descente selon des seuils de sécurité.</p>
+   <ul>
+    <li>Câblage de la puissance (pont en H KM2/KM3) et de la chaîne de sécurité</li>
+    <li>Adaptation de tension de l’anémomètre, vérifiée sous LTspice</li>
+    <li>C sous MPLAB X sur PIC24 : lecture ADC, calcul du vent, affichage LCD</li>
+    <li>Automate Siemens S7-1200 programmé avec TIA Portal (Grafcet)</li>
+    <li>Diagnostic de pannes et maintenance</li>
+   </ul></div>
+  <div class="gal">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_a59759866bf24ae790d788989cd17479~mv2.jpg" alt="Maquette du volet roulant câblée">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_be1c21c310ba4795aa607a0c65da250f~mv2.jpg" alt="Anémomètre">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_d47890ef9b6645fd8291604249410a99~mv2.jpeg" alt="Microcontrôleur PIC24">
+  </div>
+ </article>
+
+ <article class="proj">
+  <div><h3>SAE 1.01 : minuteur pour la cuisson d’œufs</h3><p class="tag">Électronique, FPGA, VHDL, PCB</p>
+   <p>Carte électronique conçue à partir d’un cahier des charges, avec un comportement logique en VHDL sur le FPGA Basys-3.</p>
+   <ul>
+    <li>Schéma, empreintes et routage du PCB sous KiCad</li>
+    <li>Fabrication : insolation, gravure, perçage, soudure, tests</li>
+    <li>VHDL : diviseur d’horloge, machine à états, anti-rebond, PWM du buzzer</li>
+    <li>Correction de 3 bugs identifiés pendant les tests</li>
+   </ul></div>
+  <div class="gal">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_eea7b2d361dc4cdaaff5dc3038baaae7~mv2.jpg" alt="Carte électronique du minuteur">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_0ddc252f4064439fb50b72fb88613900~mv2.jpeg" alt="Carte Basys-3">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_8404c77613f1494db4e9d9a000fa744e~mv2.jpg" alt="Routage du PCB">
+  </div>
+ </article>
+
+ <article class="proj" style="grid-template-columns:1fr">
+  <div><h3>SAE 3.01 : acquisition de température</h3><p class="tag">Projet en cours, électronique, Arduino</p>
+   <ul><li>Étude et réalisation d’un système d’acquisition avec capteur LM35</li><li>Arduino et étude de la chaîne d’acquisition et des signaux</li></ul></div>
+ </article>
+</section>
+
+<section class="page" id="langues">
+ <div class="head"><h2>Compétences linguistiques</h2></div>
+ <div class="cols">
+  <div class="box"><h3>Français</h3><p>Langue maternelle.</p></div>
+  <div class="box"><h3>Anglais</h3><p>Lu et technique : je lis la documentation de composants et de logiciels.</p></div>
+ </div>
+</section>
+
+<section class="page" id="informatique">
+ <div class="head"><h2>Compétences informatiques</h2></div>
+ <div class="cols">
+  <div class="box"><h3>Électronique</h3><ul class="tags"><li>KiCad</li><li>Soudure</li><li>Oscilloscope</li><li>Multimètre</li><li>Chaînes d’acquisition</li></ul></div>
+  <div class="box"><h3>Systèmes embarqués</h3><ul class="tags"><li>C</li><li>PIC24F</li><li>MPLAB X</li><li>VHDL</li><li>FPGA Artix-7 / Basys3</li><li>Vivado</li><li>Arduino</li></ul></div>
+  <div class="box"><h3>Réseaux</h3><ul class="tags"><li>LAN/Ethernet</li><li>RJ45</li><li>IPv4</li><li>ping, ipconfig, netsh</li><li>PuTTY</li><li>Cybersécurité</li></ul></div>
+  <div class="box"><h3>Automatisme</h3><ul class="tags"><li>Automates Siemens</li><li>TIA Portal</li><li>Grafcet</li><li>Scilab</li></ul></div>
+  <div class="box"><h3>Simulation et bureautique</h3><ul class="tags"><li>Python</li><li>PSIM</li><li>LTspice</li><li>Excel</li><li>Word</li><li>PowerPoint</li></ul></div>
+ </div>
+</section>
+
+<section class="page" id="pro">
+ <div class="head"><h2>Compétences professionnelles</h2><p>Les trois compétences du BUT GEII, avec les preuves détaillées sur mon <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai/mes-competences" target="_blank" rel="noopener">portfolio</a>.</p></div>
+ <div class="box"><span class="when">Concevoir</span><h3>Concevoir la partie GEII d’un système</h3>
+  <ul><li><strong>AC11.01</strong> : analyse fonctionnelle d’un système simple</li><li><strong>AC11.02</strong> : prototype de solutions matérielles et logicielles</li></ul></div>
+ <div class="box"><span class="when">Vérifier</span><h3>Vérifier la partie GEII d’un système</h3>
+  <ul><li><strong>AC12.01</strong> : procédure d’essais, hors tension puis sous tension</li><li><strong>AC12.02</strong> : identification d’un dysfonctionnement</li><li><strong>AC12.03</strong> : effets du dysfonctionnement et correction</li></ul></div>
+ <div class="box"><span class="when">Maintenir</span><h3>Maintenir la partie GEII d’un système</h3>
+  <p>Régler et valider un système en boucle ouverte et fermée à partir d’essais.</p>
+  <ul><li><strong>TP2 Automatique</strong> : système du 1<sup>er</sup> ordre, acquisition ADUSB et Scilab/Xcos</li><li><strong>TP3 Automatique</strong> : système du 2<sup>nd</sup> ordre, même chaîne d’acquisition</li><li><strong>TP5 Automatique</strong> : asservissement de vitesse d’un moteur à courant continu</li></ul></div>
+ <div class="cols">
+  <div class="box"><h3>Habilitation électrique</h3><p>Niveaux B0/B1 (NF C 18-510) : consignation en 5 étapes, protections, EPI.</p></div>
+  <div class="box"><h3>Savoir-être</h3><p>Travail en équipe, rigueur, communication claire à l’oral comme à l’écrit.</p></div>
+ </div>
+</section>
+
 <section class="page" id="sports">
- <h2>Sports</h2>
- <p><em>Section à compléter.</em></p>
+ <div class="head"><h2>Sports</h2></div>
+ <div class="box soon"><p>Page à compléter avec mes activités sportives.</p></div>
 </section>
 
-<!-- 9 HOBBIES -->
 <section class="page" id="hobbies">
- <h2>Hobbies</h2>
- <div class="item"><h3>Bricolage</h3><p>En lien avec mon goût pour l'électronique et les systèmes embarqués.</p></div>
- <div class="item"><h3>Lecture</h3><p></p></div>
+ <div class="head"><h2>Hobbies</h2></div>
+ <div class="cols">
+  <div class="box"><h3>Bricolage</h3><p>Monter, démonter et réparer : le prolongement de mon goût pour l’électronique.</p></div>
+  <div class="box"><h3>Lecture</h3><p>Une pause régulière, à compléter avec mes lectures préférées.</p></div>
+ </div>
 </section>
 
-<!-- 10 ASSO -->
 <section class="page" id="asso">
- <h2>Vie associative</h2>
- <div class="item"><h3>Soutien scolaire <small>2021 – 2025</small></h3>
-  <p>Accompagnement d'élèves pendant 4 ans.</p></div>
- <div class="item"><h3>Association SOS Habillement <small>2022</small></h3>
-  <p>Participation à la mise en place de l'association.</p></div>
+ <div class="head"><h2>Vie associative</h2></div>
+ <ul class="tl">
+  <li><span class="when">2021 – 2025</span><h3>Soutien scolaire</h3><p>Accompagnement d’élèves pendant 4 ans.</p></li>
+  <li><span class="when">2022</span><h3>Association SOS Habillement</h3><p>Participation à la mise en place de l’association.</p></li>
+ </ul>
 </section>
-
 </main>
 
+<footer>Khadidiatou Seck · Calais · <a href="mailto:khadidiatou.seck@etu.univ-littoral.fr">khadidiatou.seck@etu.univ-littoral.fr</a></footer>
+
 <script>
-var pages=document.querySelectorAll('.page'),links=document.querySelectorAll('nav .links a:not(.cv)');
+var pages=document.querySelectorAll('.page'),links=document.querySelectorAll('nav a:not([download])'),nav=document.getElementById('menu'),btn=document.getElementById('btn');
 function show(){
  var id=location.hash.slice(1)||'accueil';
  if(!document.getElementById(id))id='accueil';
  pages.forEach(function(p){p.classList.toggle('show',p.id===id)});
  links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});
- document.getElementById('links').classList.remove('open');
- document.getElementById('btn').setAttribute('aria-expanded','false');
+ nav.classList.remove('open');btn.setAttribute('aria-expanded','false');
  window.scrollTo(0,0);
 }
-document.getElementById('btn').addEventListener('click',function(){
- var l=document.getElementById('links'),o=l.classList.toggle('open');
- this.setAttribute('aria-expanded',o);
-});
+btn.addEventListener('click',function(){btn.setAttribute('aria-expanded',nav.classList.toggle('open'))});
+document.querySelectorAll('.shot').forEach(function(i){i.onerror=function(){i.remove()}});
 window.addEventListener('hashchange',show);show();
 </script>
 </body>
