@@ -5,86 +5,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Khadidiatou Seck – Étudiante en BUT GEII</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--board:#0f4a3c;--ink:#12211d;--soft:#4b5f58;--paper:#f2f5f3;--white:#fff;--gold:#d4a017;--line:#d3ddd8}
+:root{--ind:#1c2757;--deep:#11183a;--sun:#f0b429;--mist:#eceef7;--ink:#1b2040;--soft:#5a6285;--white:#fff;--line:#d5d9ea}
 *{box-sizing:border-box}
-body{margin:0;font:1.02rem/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;line-height:1.1}
-a{color:var(--board)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-header{position:sticky;top:0;z-index:20;background:var(--white);border-bottom:1px solid var(--line)}
-.bar{max-width:72rem;margin:0 auto;padding:.7rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.brand{font:800 1.25rem "Bricolage Grotesque",sans-serif;color:var(--board);text-decoration:none;margin-right:auto}
-.menu-btn{display:none;background:var(--board);color:#fff;border:0;border-radius:8px;padding:.5rem 1rem;font:600 1rem "IBM Plex Sans",sans-serif}
-nav{width:100%;display:flex;flex-wrap:wrap;gap:.1rem .25rem}
-nav a{text-decoration:none;color:var(--ink);font-size:.92rem;font-weight:500;padding:.4rem .6rem;border-bottom:3px solid transparent}
-nav a:hover{border-color:var(--line)}
-nav a.on{border-color:var(--gold);font-weight:600;color:var(--board)}
-.dl{background:var(--gold);color:var(--ink);font-weight:600;text-decoration:none;padding:.55rem 1.1rem;border-radius:8px}
-.dl:hover{background:var(--ink);color:#fff}
-main{max-width:72rem;margin:0 auto;padding:0 1.5rem 3rem}
+body{margin:0;font:1.02rem/1.65 Figtree,system-ui,sans-serif;color:var(--ink);background:#f8f9fc}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.12}
+a{color:var(--ind)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:var(--ind);color:#fff}
+header::after{content:"";display:block;height:12px;background:linear-gradient(135deg,var(--sun) 25%,transparent 25%) -8px 0/16px 16px,linear-gradient(225deg,var(--sun) 25%,transparent 25%) -8px 0/16px 16px,var(--deep)}
+.bar{max-width:74rem;margin:0 auto;padding:.7rem 1.5rem .5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand{font:600 1.3rem Fraunces,serif;color:#fff;text-decoration:none;margin-right:auto}
+.menu-btn{display:none;background:var(--sun);color:var(--deep);border:0;border-radius:6px;padding:.5rem 1rem;font:700 1rem Figtree,sans-serif}
+nav{width:100%;display:flex;flex-wrap:wrap;gap:.1rem .2rem}
+nav a{text-decoration:none;color:#cfd5f0;font-size:.92rem;font-weight:500;padding:.4rem .6rem;border-bottom:3px solid transparent}
+nav a:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+nav a.on{border-color:var(--sun);color:#fff;font-weight:700}
+.dl{background:var(--sun);color:var(--deep);font-weight:700;text-decoration:none;padding:.5rem 1.1rem;border-radius:6px}
+.dl:hover{background:#fff}
+main{max-width:74rem;margin:0 auto;padding:0 1.5rem 3rem}
 .page{display:none}.page.show{display:block}
-.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:center;padding:3.5rem 0 2.5rem}
-.hero h1{font-size:clamp(2.8rem,7vw,5rem);font-weight:800;color:var(--board);letter-spacing:-.02em}
-.role{font-size:1.2rem;font-weight:600;margin:1rem 0 .6rem}
-.hero p{max-width:34rem;color:var(--soft);margin:0 0 1.2rem}
-.btns{display:flex;gap:.8rem;flex-wrap:wrap}
-.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:8px;font-weight:600;text-decoration:none;background:var(--board);color:#fff}
-.btn.alt{background:transparent;color:var(--board);border:2px solid var(--board)}
-.btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.frame{position:relative;justify-self:center;width:min(100%,22rem)}
-.frame::before{content:"";position:absolute;inset:1.2rem -1.2rem -1.2rem 1.2rem;background:var(--board);border-radius:18px}
-.frame::after{content:"";position:absolute;right:-.4rem;top:-.4rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--gold);border:5px solid var(--paper)}
-.frame img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:var(--line)}
-.band{background:var(--board);color:#fff;border-radius:20px;padding:2rem 2rem 2.2rem;margin-bottom:2.5rem;overflow:hidden}
-.wave{display:block;width:100%;height:46px;margin-bottom:1.2rem}
-.wave path{fill:none;stroke:var(--gold);stroke-width:3;stroke-dasharray:1500;stroke-dashoffset:1500;animation:draw 2.4s ease-out forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.band h2{font-size:1.5rem;margin-bottom:1rem}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.5rem}
-.skills h3{font-size:1.05rem;color:var(--gold);margin-bottom:.3rem}
-.skills p{margin:0;font-size:.95rem;color:#d9e8e2}
-.strengths{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem}
-.strengths div{border-top:4px solid var(--gold);padding-top:.8rem}
-.strengths h3{font-size:1.1rem;margin-bottom:.3rem}
+.hero{background:var(--deep);color:#fff;box-shadow:0 0 0 100vmax var(--deep);clip-path:inset(0 -100vmax);display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:end;padding:3.5rem 0 0;margin-bottom:3rem}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);font-weight:600;letter-spacing:-.015em}
+.role{font-size:1.15rem;margin:1.2rem 0 .6rem;color:var(--sun);font-weight:600}
+.hero p{max-width:34rem;color:#cfd5f0;margin:0 0 1.5rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;padding-bottom:3.5rem}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:6px;font-weight:700;text-decoration:none;background:var(--sun);color:var(--deep)}
+.btn.alt{background:transparent;color:#fff;border:2px solid #fff}
+.btn:hover{background:#fff;color:var(--deep)}
+.arch{justify-self:center;width:min(100%,24rem);border-radius:999px 999px 0 0;overflow:hidden;border:4px solid var(--sun);border-bottom:0;background:#fff}
+.arch img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.domain h2,.sec-t{font-size:1.7rem;margin-bottom:1.2rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:0;border-top:2px solid var(--ind);margin-bottom:3rem}
+.skills div{padding:1.1rem 1.3rem 0 0}
+.skills div+div{padding-left:1.3rem;border-left:1px solid var(--line)}
+.skills h3{font-size:1.15rem;margin-bottom:.3rem;color:var(--ind)}
+.skills p{margin:0;color:var(--soft);font-size:.96rem}
+.strengths{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem}
+.strengths h3{font-size:1.2rem;margin-bottom:.3rem}
+.strengths h3::before{content:"";display:inline-block;width:.7rem;height:.7rem;background:var(--sun);transform:rotate(45deg);margin-right:.6rem}
 .strengths p{margin:0;color:var(--soft)}
-.head{padding:3rem 0 1.8rem;max-width:44rem}
-.head h2{font-size:clamp(2rem,5vw,3rem);color:var(--board);font-weight:800}
-.head h2::after{content:"";display:block;width:4rem;height:5px;background:var(--gold);margin-top:.8rem;border-radius:3px}
+.head{padding:3rem 0 1.8rem;max-width:46rem}
+.head h2{font-size:clamp(2rem,5vw,3.1rem);color:var(--ind);font-weight:600}
+.head h2::after{content:"";display:block;width:5rem;height:12px;margin-top:.8rem;background:linear-gradient(135deg,var(--sun) 25%,transparent 25%) -6px 0/12px 12px,linear-gradient(225deg,var(--sun) 25%,transparent 25%) -6px 0/12px 12px}
 .head p{color:var(--soft);margin:1rem 0 0}
-.box{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:1.2rem}
+.box{background:var(--white);border:1px solid var(--line);border-left:5px solid var(--ind);border-radius:4px;padding:1.3rem 1.6rem;margin-bottom:1.2rem}
 .box h3{font-size:1.25rem;margin-bottom:.4rem}
 .box p{margin:.3rem 0}
-.when{display:inline-block;font-weight:600;font-size:.9rem;color:var(--board);background:#e1ece7;border-radius:99px;padding:.1rem .7rem;margin-bottom:.5rem}
-.tl{list-style:none;margin:0;padding:0 0 0 2rem;border-left:3px solid var(--board)}
+.when{display:inline-block;font-weight:700;font-size:.9rem;color:var(--ind);background:#fdf0cc;border-radius:3px;padding:.1rem .6rem;margin-bottom:.5rem}
+.tl{list-style:none;margin:0;padding:0 0 0 2rem;border-left:3px solid var(--ind)}
 .tl li{position:relative;margin-bottom:1.6rem}
-.tl li::before{content:"";position:absolute;left:-2.62rem;top:.35rem;width:1rem;height:1rem;border-radius:50%;background:var(--gold);border:3px solid var(--paper)}
+.tl li::before{content:"";position:absolute;left:-2.55rem;top:.4rem;width:.9rem;height:.9rem;background:var(--sun);transform:rotate(45deg);border:2px solid #f8f9fc}
 .tl h3{font-size:1.2rem}
 .tl p{margin:.3rem 0 0;color:var(--soft)}
-.proj{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.8rem;margin-bottom:1.6rem}
-.proj h3{font-size:1.4rem;margin-bottom:.3rem}
-.proj .tag{color:var(--board);font-weight:600;font-size:.92rem;margin:0 0 .8rem}
+.proj{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;background:var(--white);border:1px solid var(--line);border-top:5px solid var(--ind);border-radius:4px;padding:1.8rem;margin-bottom:1.6rem}
+.proj h3{font-size:1.5rem;margin-bottom:.3rem}
+.proj .tag{color:var(--soft);font-weight:600;font-size:.92rem;margin:0 0 .8rem}
 .proj ul,.box ul{padding-left:1.1rem;margin:.6rem 0 0}
 .proj li,.box li{margin-bottom:.35rem}
 .gal{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;align-content:start}
-.gal img{width:100%;height:100%;min-height:9rem;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.gal img{width:100%;height:100%;min-height:9rem;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
 .gal img:first-child{grid-column:1/-1;aspect-ratio:16/10}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.2rem}
-.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:.6rem 0 0}
-.tags li{background:#e1ece7;color:var(--board);font-weight:500;font-size:.93rem;padding:.25rem .8rem;border-radius:99px}
-.soon{border-style:dashed;color:var(--soft)}
-footer{background:var(--ink);color:#cfe0d9;text-align:center;padding:1.8rem 1rem;font-size:.95rem}
-footer a{color:var(--gold)}
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;padding:0!important;margin:.6rem 0 0}
+.tags li{border:1px solid var(--ind);color:var(--ind);font-weight:500;font-size:.93rem;padding:.2rem .7rem;border-radius:3px;margin:0!important}
+.soon{border-left-style:dashed;color:var(--soft)}
+.hob{display:grid;grid-template-columns:minmax(0,20rem) 1fr;gap:2.2rem;align-items:center;margin-bottom:3rem}
+.hob:nth-of-type(even){grid-template-columns:1fr minmax(0,20rem)}
+.hob:nth-of-type(even) figure{order:2}
+.hob figure{margin:0}
+.hob img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;border:1px solid var(--line);box-shadow:10px 10px 0 var(--sun)}
+.hob h3{font-size:1.6rem;margin-bottom:.6rem;color:var(--ind)}
+.hob p{margin:.4rem 0;max-width:34rem}
+.hob .src{color:var(--soft);font-size:.92rem}
+footer{background:var(--deep);color:#cfd5f0;text-align:center;padding:1.8rem 1rem;font-size:.95rem}
+footer a{color:var(--sun)}
 @media(max-width:900px){
  .menu-btn{display:block}
  nav{display:none;flex-direction:column}nav.open{display:flex}
  .dl{display:none}
- .hero,.proj{grid-template-columns:1fr}
- .hero{padding-top:2rem;gap:2.5rem}
- .frame{order:-1;width:min(70%,16rem);margin-right:1.2rem}
+ .hero,.proj,.hob,.hob:nth-of-type(even){grid-template-columns:1fr}
+ .hob:nth-of-type(even) figure{order:0}
+ .hero{padding-top:2rem;gap:1.5rem}
+ .arch{order:-1;width:min(70%,16rem)}
+ .btns{padding-bottom:2.5rem}
+ .hob figure{max-width:20rem}
 }
-@media(prefers-reduced-motion:reduce){.wave path{animation:none;stroke-dashoffset:0}}
 </style>
 </head>
 <body>
@@ -122,11 +129,10 @@ footer a{color:var(--gold)}
     <a class="btn alt" href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai" target="_blank" rel="noopener">Voir mon portfolio</a>
    </div>
   </div>
-  <div class="frame"><img src="photo.jpg" alt="Portrait de Khadidiatou Seck"></div>
+  <div class="arch"><img src="photo.jpg" alt="Portrait de Khadidiatou Seck"></div>
  </div>
 
- <div class="band">
-  <svg class="wave" viewBox="0 0 800 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 23 H80 Q100 2 120 23 T160 23 H250 V5 H330 V41 H410 V23 H500 Q525 0 550 23 T600 23 H680 V5 H720 V41 H760 V23 H800"/></svg>
+ <div class="domain">
   <h2>Mon domaine de compétences</h2>
   <div class="skills">
    <div><h3>Électronique</h3><p>Schéma et PCB sous KiCad, fabrication, soudure, tests à l’oscilloscope.</p></div>
@@ -136,7 +142,7 @@ footer a{color:var(--gold)}
   </div>
  </div>
 
- <h2 style="font-size:1.6rem;margin-bottom:1.2rem">Mes points forts</h2>
+ <h2 class="sec-t">Mes points forts</h2>
  <div class="strengths">
   <div><h3>Rigoureuse</h3><p>Méthode pas à pas : vérification hors tension, puis tests.</p></div>
   <div><h3>Autonome</h3><p>Je mène un projet de la conception à la mise en service.</p></div>
@@ -164,14 +170,38 @@ footer a{color:var(--gold)}
 <section class="page" id="experiences">
  <div class="head"><h2>Expériences professionnelles</h2></div>
  <div class="box"><span class="when">Avril 2027</span><h3>Stage recherché, 8 semaines</h3><p>Je souhaite mettre en pratique mes compétences en électronique, systèmes embarqués et réseaux.</p></div>
+ <div class="box"><span class="when">Dès la 3<sup>e</sup> année</span><h3>Alternance recherchée</h3>
+  <p>Je suis aussi à la recherche d’une alternance pour la suite de mon BUT. Elle serait pour moi la meilleure option :</p>
+  <ul>
+   <li>Elle m’éviterait une nouvelle recherche de stage de 14 semaines en 3<sup>e</sup> année.</li>
+   <li>Elle me permettrait de mener des projets concrets et durables dans l’entreprise.</li>
+   <li>Elle faciliterait mon insertion dans le milieu professionnel.</li>
+   <li>Elle me ferait travailler chaque jour dans l’électronique, ce qui me passionne.</li>
+  </ul></div>
  <div class="box soon"><p>Cette page s’enrichira avec mes prochains stages et expériences.</p></div>
 </section>
 
 <section class="page" id="projets">
- <div class="head"><h2>Projets</h2><p>Le détail pas à pas de chaque SAE est sur mon <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai" target="_blank" rel="noopener">portfolio</a>.</p></div>
+ <div class="head"><h2>Projets</h2><p>Le détail pas à pas de chaque projet est sur mon <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai" target="_blank" rel="noopener">portfolio</a>.</p></div>
 
  <article class="proj">
-  <div><h3>SAE 2 : volet roulant automatisé</h3><p class="tag">Automatisme, électronique, électrotechnique, embarqué</p>
+  <div><h3>Projet 1 : minuteur pour la cuisson d’œufs</h3><p class="tag">Électronique, FPGA, VHDL, PCB</p>
+   <p>Carte électronique conçue à partir d’un cahier des charges, avec un comportement logique en VHDL sur le FPGA Basys-3.</p>
+   <ul>
+    <li>Schéma, empreintes et routage du PCB sous KiCad</li>
+    <li>Fabrication : insolation, gravure, perçage, soudure, tests</li>
+    <li>VHDL : diviseur d’horloge, machine à états, anti-rebond, PWM du buzzer</li>
+    <li>Correction de 3 bugs identifiés pendant les tests</li>
+   </ul></div>
+  <div class="gal">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_eea7b2d361dc4cdaaff5dc3038baaae7~mv2.jpg" alt="Carte électronique du minuteur">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_0ddc252f4064439fb50b72fb88613900~mv2.jpeg" alt="Carte Basys-3">
+   <img class="shot" src="https://static.wixstatic.com/media/0224ac_8404c77613f1494db4e9d9a000fa744e~mv2.jpg" alt="Routage du PCB">
+  </div>
+ </article>
+
+ <article class="proj">
+  <div><h3>Projet 2 : volet roulant automatisé</h3><p class="tag">Automatisme, électronique, électrotechnique, embarqué</p>
    <p>Automatisation d’un volet roulant : câblage, mesure du vent par anémomètre et commande de la montée et de la descente selon des seuils de sécurité.</p>
    <ul>
     <li>Câblage de la puissance (pont en H KM2/KM3) et de la chaîne de sécurité</li>
@@ -187,34 +217,15 @@ footer a{color:var(--gold)}
   </div>
  </article>
 
- <article class="proj">
-  <div><h3>SAE 1.01 : minuteur pour la cuisson d’œufs</h3><p class="tag">Électronique, FPGA, VHDL, PCB</p>
-   <p>Carte électronique conçue à partir d’un cahier des charges, avec un comportement logique en VHDL sur le FPGA Basys-3.</p>
-   <ul>
-    <li>Schéma, empreintes et routage du PCB sous KiCad</li>
-    <li>Fabrication : insolation, gravure, perçage, soudure, tests</li>
-    <li>VHDL : diviseur d’horloge, machine à états, anti-rebond, PWM du buzzer</li>
-    <li>Correction de 3 bugs identifiés pendant les tests</li>
-   </ul></div>
-  <div class="gal">
-   <img class="shot" src="https://static.wixstatic.com/media/0224ac_eea7b2d361dc4cdaaff5dc3038baaae7~mv2.jpg" alt="Carte électronique du minuteur">
-   <img class="shot" src="https://static.wixstatic.com/media/0224ac_0ddc252f4064439fb50b72fb88613900~mv2.jpeg" alt="Carte Basys-3">
-   <img class="shot" src="https://static.wixstatic.com/media/0224ac_8404c77613f1494db4e9d9a000fa744e~mv2.jpg" alt="Routage du PCB">
-  </div>
- </article>
-
  <article class="proj" style="grid-template-columns:1fr">
-  <div><h3>SAE 3.01 : acquisition de température</h3><p class="tag">Projet en cours, électronique, Arduino</p>
+  <div><h3>Projet 3 : acquisition de température</h3><p class="tag">Projet en cours, électronique, Arduino</p>
    <ul><li>Étude et réalisation d’un système d’acquisition avec capteur LM35</li><li>Arduino et étude de la chaîne d’acquisition et des signaux</li></ul></div>
  </article>
 </section>
 
 <section class="page" id="langues">
  <div class="head"><h2>Compétences linguistiques</h2></div>
- <div class="cols">
-  <div class="box"><h3>Français</h3><p>Langue maternelle.</p></div>
-  <div class="box"><h3>Anglais</h3><p>Lu et technique : je lis la documentation de composants et de logiciels.</p></div>
- </div>
+ <div class="box"><h3>Anglais</h3><p>Lu et technique.</p></div>
 </section>
 
 <section class="page" id="informatique">
@@ -245,14 +256,41 @@ footer a{color:var(--gold)}
 
 <section class="page" id="sports">
  <div class="head"><h2>Sports</h2></div>
- <div class="box soon"><p>Page à compléter avec mes activités sportives.</p></div>
+ <div class="hob">
+  <figure><img src="sports.jpg" alt="Coup de pied haut lors d’un entraînement de taekwondo" style="aspect-ratio:3/4"></figure>
+  <div>
+   <h3>Taekwondo</h3>
+   <p><span class="when">2022 – 2024</span></p>
+   <p>Pratique de cet art martial au club Taekwondo Jaxaay Jong Jou : coups de pied, souplesse, maîtrise de soi.</p>
+   <h3 style="margin-top:1.8rem">Gymnastique</h3>
+   <p>Membre du club de gymnastique de mon lycée.</p>
+   <p>Ces deux sports m’ont appris la discipline, la régularité et le travail en équipe.</p>
+  </div>
+ </div>
 </section>
 
 <section class="page" id="hobbies">
  <div class="head"><h2>Hobbies</h2></div>
- <div class="cols">
-  <div class="box"><h3>Bricolage</h3><p>Monter, démonter et réparer : le prolongement de mon goût pour l’électronique.</p></div>
-  <div class="box"><h3>Lecture</h3><p>Une pause régulière, à compléter avec mes lectures préférées.</p></div>
+
+ <div class="hob">
+  <figure><img src="cuisine.jpg" alt="Thiéboudienne, plat sénégalais"></figure>
+  <div><h3>Cuisine</h3>
+   <p>Je cuisine avec passion des plats orientaux et africains. Mon plat fétiche : le thiéboudienne, riz au poisson et aux légumes, le plat national du Sénégal.</p>
+   <p>J’ai partagé la recette en vidéo sur TikTok.</p></div>
+ </div>
+
+ <div class="hob">
+  <figure><img src="lecture.jpg" alt="Couverture du roman Cœur du Sahel"></figure>
+  <div><h3>Lecture</h3>
+   <p>Mon dernier coup de cœur : <strong>Cœur du Sahel</strong> de Djaïli Amadou Amal.</p>
+   <p>Faydé, 15 ans, quitte les montagnes du nord du Cameroun pour travailler comme domestique à Maroua. Le roman raconte son quotidien et montre les écarts entre classes sociales et la condition des femmes au Sahel.</p></div>
+ </div>
+
+ <div class="hob">
+  <figure><img src="bricolage.jpg" alt="Réparation d’un vélo à l’atelier"></figure>
+  <div><h3>Bricolage</h3>
+   <p>Pendant les week-ends de vacances, j’allais à l’atelier de mon oncle, « Abdou Vélo », où l’on réparait et vendait des vélos.</p>
+   <p>J’y ai pris le goût de démonter, comprendre et remettre en marche : le même réflexe que pour le diagnostic de pannes en électronique.</p></div>
  </div>
 </section>
 
