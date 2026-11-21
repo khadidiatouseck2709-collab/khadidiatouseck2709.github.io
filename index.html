@@ -86,7 +86,6 @@ main{max-width:74rem;margin:0 auto;padding:0 1.5rem 3rem}
 .chain span{border:2px solid var(--ind);background:#fff;border-radius:4px;padding:.5rem .8rem;font-weight:600;text-align:center;font-size:.92rem}
 .chain small{display:block;font-weight:400;color:var(--soft)}
 .chain i{font-style:normal;font-size:1.4rem;color:var(--ind)}
-.gal.two img,.gal.two img:first-child{grid-column:auto;height:16rem}
 .proof{margin:.9rem 0 0;padding-top:.7rem;border-top:1px dashed var(--line);font-size:.95rem}
 .proof strong{color:var(--ind)}
 .sub{font-size:1rem}
@@ -194,18 +193,15 @@ footer a{color:var(--sun)}
 
  <article class="proj">
   <div><h3>Projet 3 : acquisition de température</h3><p class="tag">En cours · Électronique, Arduino</p>
-   <p>Réalisation d’un système qui mesure une température et l’affiche grâce à un microcontrôleur. J’ai testé ma solution sur platine d’essai.</p>
+   <p>Réalisation d’un système qui mesure une température et la rend exploitable par un microcontrôleur.</p>
    <ul>
     <li>Capteur de température LM35 : étude de sa sortie analogique</li>
-    <li>Mise en œuvre d’un Arduino Uno et d’un afficheur LCD 1602A pour lire et afficher la mesure</li>
-    <li>Deux versions du circuit, avec et sans conditionnement du signal, pour comparer les résultats</li>
+    <li>Mise en œuvre d’un Arduino pour lire la mesure</li>
     <li>Étude de la chaîne d’acquisition et des signaux associés</li>
    </ul>
    <p class="proof"><strong>Compétences démontrées :</strong> Concevoir, Vérifier</p></div>
-  <figure class="fig"><div class="gal two">
-   <img class="shot" src="projet3-avec.jpg" alt="Projet 3 : circuit avec conditionnement du signal">
-   <img class="shot" src="projet3-sans.jpg" alt="Projet 3 : circuit sans conditionnement du signal">
-  </div><figcaption>Projet 3, essais sur platine : à gauche le circuit avec conditionnement du signal, à droite le circuit sans conditionnement. Arduino Uno et afficheur LCD de la température.</figcaption></figure>
+  <figure class="fig"><div class="chain"><span>Capteur LM35</span><i>→</i><span>Arduino<small>conversion analogique-numérique</small></span><i>→</i><span>Température mesurée</span></div>
+   <figcaption>Schéma de principe de la chaîne d’acquisition étudiée dans ce projet.</figcaption></figure>
  </article>
 
  <article class="proj">
@@ -269,7 +265,7 @@ footer a{color:var(--sun)}
    <li>Programmer un microcontrôleur PIC24 en C et décrire un circuit en VHDL sur FPGA</li>
    <li>Adapter le signal d’un capteur et le valider par simulation (LTspice)</li>
   </ul>
-  <p class="proof"><strong>Preuves :</strong> <a href="#projets">Projets 1, 2 et 3 avec photos</a> · <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai/mes-competences#concevoir" target="_blank" rel="noopener">détail sur mon portfolio</a></p></div>
+  <p class="proof"><strong>Preuves :</strong> <a href="#projets">Projet 1 et Projet 2 avec photos</a> · <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai/mes-competences#concevoir" target="_blank" rel="noopener">détail sur mon portfolio</a></p></div>
 
  <div class="box"><span class="when">Vérifier</span><h3>Tester et diagnostiquer un système</h3>
   <ul>
@@ -277,7 +273,7 @@ footer a{color:var(--sun)}
    <li>Mesurer avec un oscilloscope et un multimètre</li>
    <li>Identifier une panne, comprendre ses effets et la corriger (3 bugs corrigés sur le minuteur)</li>
   </ul>
-  <p class="proof"><strong>Preuves :</strong> <a href="#projets">Projets 1, 2 et 3</a> · <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai/mes-competences#v%C3%A9rifier" target="_blank" rel="noopener">procédures d’essais sur mon portfolio</a></p></div>
+  <p class="proof"><strong>Preuves :</strong> <a href="#projets">Projet 1 et Projet 2</a> · <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai/mes-competences#v%C3%A9rifier" target="_blank" rel="noopener">procédures d’essais sur mon portfolio</a></p></div>
 
  <div class="box"><span class="when">Maintenir</span><h3>Régler et maintenir un système</h3>
   <ul>
