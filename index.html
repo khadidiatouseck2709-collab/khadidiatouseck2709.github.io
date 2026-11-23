@@ -86,12 +86,32 @@ main{max-width:74rem;margin:0 auto;padding:0 1.5rem 3rem}
 .chain span{border:2px solid var(--ind);background:#fff;border-radius:4px;padding:.5rem .8rem;font-weight:600;text-align:center;font-size:.92rem}
 .chain small{display:block;font-weight:400;color:var(--soft)}
 .chain i{font-style:normal;font-size:1.4rem;color:var(--ind)}
+.gal.two img,.gal.two img:first-child{grid-column:auto;height:16rem}
+.tool{display:grid;grid-template-columns:9.5rem 1fr;gap:.15rem 1.2rem;padding:.65rem 0;border-top:1px solid var(--line)}
+.tool:first-of-type{border-top:0}
+.tool b{color:var(--ind)}
+.tool span{color:var(--soft);font-size:.93rem}
+.ac{margin:1.2rem 0 1.8rem}
+.ac-h{display:flex;gap:.8rem;align-items:baseline;flex-wrap:wrap}
+.ac-h .code{font:700 .78rem Figtree,sans-serif;color:var(--soft);background:var(--mist);border-radius:3px;padding:.1rem .5rem}
+.ac h4{font:600 1.2rem Fraunces,Georgia,serif;margin:0;color:var(--ind)}
+.ac .lead{margin:.3rem 0 .8rem;color:var(--soft)}
+.evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.8rem}
+.evc{background:#fff;border:1px solid var(--line);border-top:3px solid var(--sun);border-radius:4px;padding:.8rem 1rem}
+.evc small{display:block;font-weight:700;font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
+.evc h5{font:600 1.02rem Fraunces,Georgia,serif;margin:.2rem 0 .3rem;color:var(--ink)}
+.evc p{margin:0 0 .5rem;font-size:.93rem}
+.evc .tags li{font-size:.8rem;padding:.1rem .5rem}
+.cmp-h{display:flex;gap:.8rem;align-items:center;margin:2.6rem 0 .3rem}
+.cmp-h span{background:var(--ind);color:#fff;font-weight:700;font-size:.8rem;border-radius:3px;padding:.15rem .6rem}
+.cmp-h h3{font-size:1.7rem;color:var(--ind)}
 .proof{margin:.9rem 0 0;padding-top:.7rem;border-top:1px dashed var(--line);font-size:.95rem}
 .proof strong{color:var(--ind)}
 .sub{font-size:1rem}
 footer{background:var(--deep);color:#cfd5f0;text-align:center;padding:1.8rem 1rem;font-size:.95rem}
 footer a{color:var(--sun)}
 @media(max-width:900px){
+ .tool{grid-template-columns:1fr}
  .menu-btn{display:block}
  nav{display:none;flex-direction:column}nav.open{display:flex}
  .dl{display:none}
@@ -193,28 +213,32 @@ footer a{color:var(--sun)}
 
  <article class="proj">
   <div><h3>Projet 3 : acquisition de température</h3><p class="tag">En cours · Électronique, Arduino</p>
-   <p>Réalisation d’un système qui mesure une température et la rend exploitable par un microcontrôleur.</p>
+   <p>Projet individuel : concevoir et réaliser une chaîne de mesure de température (capteur, conditionneur de signal, affichage). J’ai testé ma solution sur platine d’essai.</p>
    <ul>
-    <li>Capteur de température LM35 : étude de sa sortie analogique</li>
-    <li>Mise en œuvre d’un Arduino pour lire la mesure</li>
+    <li>Choix du capteur LM35 après comparaison avec la sonde PT100, à partir des documentations techniques</li>
+    <li>Mise en œuvre d’un Arduino Uno et d’un afficheur LCD 1602A pour lire et afficher la mesure</li>
+    <li>Deux versions du circuit, avec et sans conditionnement du signal, pour comparer les résultats</li>
     <li>Étude de la chaîne d’acquisition et des signaux associés</li>
    </ul>
    <p class="proof"><strong>Compétences démontrées :</strong> Concevoir, Vérifier</p></div>
-  <figure class="fig"><div class="chain"><span>Capteur LM35</span><i>→</i><span>Arduino<small>conversion analogique-numérique</small></span><i>→</i><span>Température mesurée</span></div>
-   <figcaption>Schéma de principe de la chaîne d’acquisition étudiée dans ce projet.</figcaption></figure>
+  <figure class="fig"><div class="gal two">
+   <img class="shot" src="projet3-avec.jpg" alt="Projet 3 : circuit avec conditionnement du signal">
+   <img class="shot" src="projet3-sans.jpg" alt="Projet 3 : circuit sans conditionnement du signal">
+  </div><figcaption>Projet 3, essais sur platine : à gauche le circuit avec conditionnement du signal, à droite le circuit sans conditionnement. Arduino Uno et afficheur LCD de la température.</figcaption></figure>
  </article>
 
  <article class="proj">
   <div><h3>Projet 2 : volet roulant automatisé</h3><p class="tag">Automatisme, électronique, électrotechnique, embarqué</p>
    <p>Automatisation d’un volet roulant : câblage, mesure du vent par anémomètre et commande de la montée et de la descente selon des seuils de sécurité.</p>
    <ul>
+    <li>Schémas de la partie puissance et de la partie commande</li>
     <li>Câblage de la puissance (pont en H KM2/KM3) et de la chaîne de sécurité</li>
     <li>Adaptation de tension de l’anémomètre, vérifiée sous LTspice</li>
     <li>C sous MPLAB X sur PIC24 : lecture ADC, calcul du vent, affichage LCD</li>
     <li>Automate Siemens S7-1200 programmé avec TIA Portal (Grafcet)</li>
     <li>Diagnostic de pannes et maintenance</li>
    </ul>
-   <p class="proof"><strong>Compétences démontrées :</strong> Concevoir, Vérifier, Maintenir</p></div>
+   <p class="proof"><strong>Compétences démontrées :</strong> Concevoir, Vérifier, Maintenir, Électrotechnique</p></div>
   <figure class="fig"><div class="gal">
    <img class="shot" src="projet-sae2-1.jpeg" alt="Photo 1 du projet 2">
    <img class="shot" src="projet-sae2-2.jpeg" alt="Photo 2 du projet 2">
@@ -245,46 +269,60 @@ footer a{color:var(--sun)}
 </section>
 
 <section class="page" id="informatique">
- <div class="head"><h2>Compétences informatiques</h2></div>
- <div class="cols">
-  <div class="box"><h3>Électronique</h3><ul class="tags"><li>KiCad</li><li>Soudure</li><li>Oscilloscope</li><li>Multimètre</li><li>Chaînes d’acquisition</li></ul></div>
-  <div class="box"><h3>Systèmes embarqués</h3><ul class="tags"><li>C</li><li>PIC24F</li><li>MPLAB X</li><li>VHDL</li><li>FPGA Artix-7 / Basys3</li><li>Vivado</li><li>Arduino</li></ul></div>
-  <div class="box"><h3>Réseaux</h3><ul class="tags"><li>LAN/Ethernet</li><li>RJ45</li><li>IPv4</li><li>ping, ipconfig, netsh</li><li>PuTTY</li><li>Cybersécurité</li></ul></div>
-  <div class="box"><h3>Automatisme</h3><ul class="tags"><li>Automates Siemens</li><li>TIA Portal</li><li>Grafcet</li><li>Scilab</li></ul></div>
-  <div class="box"><h3>Simulation et bureautique</h3><ul class="tags"><li>Python</li><li>PSIM</li><li>LTspice</li><li>Excel</li><li>Word</li><li>PowerPoint</li></ul></div>
+ <div class="head"><h2>Compétences informatiques</h2><p>Pour chaque outil : où je l’ai utilisé et ce que j’ai réalisé. Les projets sont visibles dans la page <a href="#projets">Projets</a>.</p></div>
+
+ <div class="box"><h3>Électronique et simulation</h3>
+  <div class="tool"><b>KiCad</b><div>Schéma, empreintes et routage du circuit imprimé du minuteur, puis fabrication et test de la carte. <span>Projet 1</span></div></div>
+  <div class="tool"><b>LTspice</b><div>Simulation de l’adaptation de tension de l’anémomètre avant la réalisation. <span>Projet 2</span></div></div>
+  <div class="tool"><b>Oscilloscope, multimètre</b><div>Mesures et tests des cartes et des maquettes, diagnostic de pannes. <span>Projets 1, 2 et 3</span></div></div>
+  <div class="tool"><b>Platine d’essai</b><div>Essais de la chaîne d’acquisition de température, avec et sans conditionnement du signal. <span>Projet 3</span></div></div>
  </div>
+
+ <div class="box"><h3>Programmation et systèmes embarqués</h3>
+  <div class="tool"><b>C, MPLAB X, PIC24F</b><div>Lecture du capteur par convertisseur analogique-numérique, calcul de la vitesse du vent, affichage LCD, commande des sorties. <span>Projet 2</span></div></div>
+  <div class="tool"><b>VHDL, Vivado, FPGA Basys-3</b><div>Diviseur d’horloge, machine à états, anti-rebond et signal PWM du buzzer du minuteur. <span>Projet 1</span></div></div>
+  <div class="tool"><b>STM32</b><div>Prise en main de microcontrôleurs STM32 sur mes projets de systèmes embarqués.</div></div>
+  <div class="tool"><b>Arduino</b><div>Acquisition et affichage de la température sur un afficheur LCD 1602A. <span>Projet 3</span></div></div>
+ </div>
+
+ <div class="box"><h3>Automatisme et régulation</h3>
+  <div class="tool"><b>TIA Portal, automate Siemens S7-1200</b><div>Programmation de la commande du volet roulant en Grafcet. <span>Projet 2</span></div></div>
+  <div class="tool"><b>Scilab, Xcos, interface ADUSB</b><div>Acquisition et traitement des mesures pour les systèmes du 1<sup>er</sup> et du 2<sup>nd</sup> ordre et la régulation de vitesse d’un moteur à courant continu. <span>TP2, TP3 et TP5 d’Automatique</span></div></div>
+ </div>
+
+ <div class="box"><h3>Mesure et instrumentation</h3>
+  <div class="tool"><b>LabVIEW, Agilent VEE</b><div>Programmation des instruments de mesure pour automatiser les essais en électronique.</div></div>
+  <div class="tool"><b>ADALM2000, Scopy</b><div>Oscilloscope et analyse de signaux pour contrôler une carte à microcontrôleur. <span>Info 3</span></div></div>
+ </div>
+
+ <div class="box"><h3>Notions d’électronique étudiées</h3>
+  <ul class="tags"><li>Boucles à verrouillage de phase (PLL)</li><li>Oscillateurs</li><li>Filtrage</li><li>Analyse de spectre</li><li>Types de communication</li><li>Bases de l’électronique et des systèmes embarqués en réseau</li></ul></div>
+
+ <div class="box"><h3>Réseaux</h3>
+  <div class="tool"><b>LAN, Ethernet, RJ45</b><div>Câblage et sertissage de câbles RJ45, adressage IPv4.</div></div>
+  <div class="tool"><b>Cisco Packet Tracer</b><div>Simulation et conception de réseaux.</div></div>
+  <div class="tool"><b>ping, ipconfig, netsh, PuTTY</b><div>Diagnostic d’un réseau et connexion à distance. Notions de cybersécurité.</div></div>
+ </div>
+
+ <div class="box"><h3>Autres outils</h3><ul class="tags"><li>Python (boucles, fonctions)</li><li>PSIM</li><li>Excel</li><li>Word</li><li>PowerPoint</li></ul></div>
 </section>
 
 <section class="page" id="pro">
- <div class="head"><h2>Compétences professionnelles</h2><p>Pour chaque compétence : ce que je sais faire, et où le vérifier. Elles correspondent aux compétences du <a href="https://cache.media.education.gouv.fr/file/SP4-MESRI-26-5-2022/13/0/spe617_annexe8_1426130.pdf" target="_blank" rel="noopener">programme national du BUT GEII</a>.</p></div>
+ <div class="head"><h2>Compétences professionnelles</h2><p>Pour chaque compétence : ce que je sais faire, puis les travaux qui le prouvent. Les compétences viennent du <a href="https://cache.media.education.gouv.fr/file/SP4-MESRI-26-5-2022/13/0/spe617_annexe8_1426130.pdf" target="_blank" rel="noopener">programme national du BUT GEII</a>. Mon <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai" target="_blank" rel="noopener">portfolio</a> détaille chaque projet.</p></div>
 
- <div class="box"><span class="when">Concevoir</span><h3>Concevoir un système électronique</h3>
-  <ul>
-   <li>Transformer un besoin en schéma fonctionnel (ex. : seuils de vent pour le volet roulant)</li>
-   <li>Dessiner un schéma électronique et router un circuit imprimé sous KiCad</li>
-   <li>Programmer un microcontrôleur PIC24 en C et décrire un circuit en VHDL sur FPGA</li>
-   <li>Adapter le signal d’un capteur et le valider par simulation (LTspice)</li>
-  </ul>
-  <p class="proof"><strong>Preuves :</strong> <a href="#projets">Projet 1 et Projet 2 avec photos</a> · <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai/mes-competences#concevoir" target="_blank" rel="noopener">détail sur mon portfolio</a></p></div>
+ <div class="cmp-h"><span>Compétence 1</span><h3>Concevoir un système électronique</h3></div>
+ <div class="ac"><div class="ac-h"><span class="code">AC11.01</span><h4>Analyser un système simple</h4></div><p class="lead">Identifier les entrées, les sorties, les blocs fonctionnels et les contraintes avant de concevoir.</p><div class="evs"><div class="evc"><small>Projet 2 · Informatique embarquée</small><h5>Synoptique de la chaîne de mesure du vent</h5><p>J’ai modélisé le chemin du signal : anémomètre, adaptation de tension, convertisseur analogique-numérique du PIC24, puis calcul de la vitesse.</p><ul class="tags"><li>PIC24FJ128GA010</li><li>CAN</li><li>Synoptique</li></ul></div><div class="evc"><small>Projet 2 · Automatisme</small><h5>Analyse du volet roulant</h5><p>Deux modes (manuel et automatique), actionneurs, capteurs et chaîne de sécurité du moteur commandé par un pont en H.</p><ul class="tags"><li>Automatisme</li><li>Analyse système</li></ul></div><div class="evc"><small>Projet 1 · Électronique</small><h5>Analyse du minuteur</h5><p>Découpage en blocs : alimentation, commande, boutons et LEDs avec résistances de limitation de courant.</p><ul class="tags"><li>KiCad</li><li>PCB</li></ul></div></div></div><div class="ac"><div class="ac-h"><span class="code">AC11.02</span><h4>Réaliser un prototype matériel et logiciel</h4></div><p class="lead">Passer de l’analyse à quelque chose qui fonctionne : câblage, programme, essais.</p><div class="evs"><div class="evc"><small>Projet 2 · TP Info 2</small><h5>Programme C complet sur PIC24</h5><p>Lecture du CAN, calcul de la vitesse du vent, affichage LCD et LED d’alerte au-delà d’un seuil.</p><ul class="tags"><li>MPLAB X</li><li>C</li><li>LCD</li></ul></div><div class="evc"><small>Projet 2 · Câblage</small><h5>Câblage complet de la maquette</h5><p>Protections, alimentations, pont en H KM2/KM3 et automate Siemens S7-1200, selon mes schémas.</p><ul class="tags"><li>TIA Portal</li><li>S7-1200</li></ul></div><div class="evc"><small>Projet 3 · Mesure</small><h5>Chaîne de mesure de température</h5><p>Essais sur platine d’essai, avec et sans conditionnement du signal, Arduino et afficheur LCD.</p><ul class="tags"><li>LM35</li><li>Arduino</li><li>Platine d’essai</li></ul></div></div></div><div class="ac"><div class="ac-h"><span class="code">AC11.03</span><h4>Rédiger un dossier clair et réutilisable</h4></div><p class="lead">Documenter assez précisément pour qu’une autre personne puisse refaire le travail.</p><div class="evs"><div class="evc"><small>Projet 2 · Séance 1</small><h5>Compte rendu de conception</h5><p>Sécurisation du pont en H, fins de course, arrêt d’urgence, capteur d’obstacle et schémas annotés.</p><ul class="tags"><li>Schéma électrique</li><li>Rapport PDF</li></ul></div><div class="evc"><small>Projet 2 · Séances 2 et 3</small><h5>Compte rendu de câblage et programme automate</h5><p>Démarche de câblage, tests, captures du programme Grafcet et explications de son fonctionnement.</p><ul class="tags"><li>Grafcet</li><li>TIA Portal</li></ul></div><div class="evc"><small>Tous les TP</small><h5>Synthèses rédigées</h5><p>Chaque TP se termine par un compte rendu des résultats et de leur interprétation.</p><ul class="tags"><li>Compte rendu</li></ul></div></div></div>
 
- <div class="box"><span class="when">Vérifier</span><h3>Tester et diagnostiquer un système</h3>
-  <ul>
-   <li>Suivre une procédure d’essais : vérifications hors tension, puis tests sous tension</li>
-   <li>Mesurer avec un oscilloscope et un multimètre</li>
-   <li>Identifier une panne, comprendre ses effets et la corriger (3 bugs corrigés sur le minuteur)</li>
-  </ul>
-  <p class="proof"><strong>Preuves :</strong> <a href="#projets">Projet 1 et Projet 2</a> · <a href="https://khadidiatouseck.wixsite.com/portfolio-geii-calai/mes-competences#v%C3%A9rifier" target="_blank" rel="noopener">procédures d’essais sur mon portfolio</a></p></div>
+ <div class="cmp-h"><span>Compétence 2</span><h3>Vérifier un système électronique</h3></div>
+ <div class="ac"><div class="ac-h"><span class="code">AC12.01</span><h4>Appliquer une procédure d’essais</h4></div><p class="lead">D’abord hors tension, puis sous tension, en validant chaque fonction avant la suivante.</p><div class="evs"><div class="evc"><small>Projet 2 · Automatisme</small><h5>Simulation Grafcet avec table de forçage</h5><p>Test du programme avec le simulateur avant de l’essayer sur la maquette.</p><ul class="tags"><li>TIA Portal</li><li>Simulateur</li></ul></div><div class="evc"><small>Projet 2 · Câblage</small><h5>Tests méthodiques du câblage</h5><p>Continuité au multimètre hors tension, puis tests fonctionnels sous tension.</p><ul class="tags"><li>Multimètre</li><li>Test fonctionnel</li></ul></div><div class="evc"><small>TP Info 2 · MPLAB X</small><h5>Débogage pas à pas sur PIC24</h5><p>Suivi des variables et du temps d’exécution avec le débogueur ICD3.</p><ul class="tags"><li>ICD3</li><li>StopWatch</li></ul></div><div class="evc"><small>TP Électronique</small><h5>Fréquence de coupure d’un filtre RC</h5><p>Mesure par trois méthodes indépendantes : oscilloscope, multimètre et diagramme de Bode.</p><ul class="tags"><li>Oscilloscope</li><li>Bode</li></ul></div></div></div><div class="ac"><div class="ac-h"><span class="code">AC12.02</span><h4>Identifier un dysfonctionnement</h4></div><p class="lead">Quand quelque chose ne marche pas, trouver où : circuit, code ou configuration.</p><div class="evs"><div class="evc"><small>Projet 2 · Pont en H</small><h5>Risque de court-circuit</h5><p>Une commande simultanée de montée et de descente peut court-circuiter l’alimentation : j’ai ajouté un verrouillage.</p><ul class="tags"><li>KM2/KM3</li><li>Sécurité</li></ul></div><div class="evc"><small>TP Info 2</small><h5>Erreurs de calcul en flottants</h5><p>Identification des erreurs d’arrondi de la représentation IEEE 754.</p><ul class="tags"><li>IEEE 754</li><li>C</li></ul></div><div class="evc"><small>TP Info 2 · PIC24</small><h5>Dépassement de plage des seuils</h5><p>Repérage de l’absence de garde-fou dans le code et correction.</p><ul class="tags"><li>Débogage</li><li>C</li></ul></div></div></div><div class="ac"><div class="ac-h"><span class="code">AC12.03</span><h4>Décrire les effets d’un dysfonctionnement</h4></div><p class="lead">Expliquer précisément ce qui se passe, pourquoi c’est dangereux ou faux, et ce qu’on a fait pour corriger.</p><div class="evs"><div class="evc"><small>Projet 2 · Séance 1</small><h5>Effets des défauts de sécurité</h5><p>Court-circuit, surchauffe, surcourse du volet : conséquences et protections choisies.</p><ul class="tags"><li>Analyse de risque</li><li>Fins de course</li></ul></div><div class="evc"><small>TP Info 2</small><h5>Effets de la représentation IEEE 754</h5><p>Conséquence des arrondis sur le résultat d’un calcul.</p><ul class="tags"><li>Précision numérique</li></ul></div><div class="evc"><small>TP Électronique</small><h5>Écarts entre trois mesures</h5><p>Explication des différences entre les méthodes de mesure de la fréquence de coupure.</p><ul class="tags"><li>Filtre RC</li><li>Incertitude</li></ul></div></div></div>
 
- <div class="box"><span class="when">Maintenir</span><h3>Régler et maintenir un système</h3>
-  <ul>
-   <li>Identifier le comportement d’un système du 1<sup>er</sup> et du 2<sup>nd</sup> ordre à partir d’essais (TP2 et TP3 d’Automatique)</li>
-   <li>Régler la vitesse d’un moteur à courant continu en boucle fermée (TP5)</li>
-   <li>Acquérir des mesures avec une interface ADUSB et les traiter sous Scilab/Xcos</li>
-   <li>Diagnostiquer et réparer une maquette (volet roulant)</li>
-  </ul>
-  <p class="proof"><strong>Preuves :</strong> <a href="#projets">Projet 2</a> (diagnostic et réparation de la maquette)</p></div>
+ <div class="cmp-h"><span>Compétence 3</span><h3>Maintenir un système</h3></div>
+ <div class="ac"><div class="ac-h"><h4>Comprendre la maintenance et analyser les défaillances</h4></div><p class="lead">Choisir la bonne forme de maintenance et trouver l’origine des pannes.</p><div class="evs"><div class="evc"><small>BUT 2 · Maintenance</small><h5>Concepts et stratégies</h5><p>Maintenance corrective, préventive et d’amélioration ; niveaux et échelons de maintenance.</p><ul class="tags"><li>Maintenance</li></ul></div><div class="evc"><small>BUT 2 · Maintenance</small><h5>Analyse des défaillances</h5><p>Méthode ABC, arbre de défaillance, diagramme d’Ishikawa, lois de fiabilité, MTBF et MTTR.</p><ul class="tags"><li>ABC</li><li>Ishikawa</li><li>MTBF / MTTR</li></ul></div></div></div><div class="ac"><div class="ac-h"><h4>Régler et valider un système</h4></div><p class="lead">Identifier le comportement d’un système à partir d’essais, puis le régler en boucle fermée.</p><div class="evs"><div class="evc"><small>BUT 2 · Automatique</small><h5>TP2 et TP3 : systèmes du 1er et du 2nd ordre</h5><p>Fonctions de transfert en boucle ouverte et fermée, mesures avec l’interface ADUSB et traitement sous Scilab/Xcos.</p><ul class="tags"><li>Scilab</li><li>Xcos</li><li>ADUSB</li></ul></div><div class="evc"><small>BUT 2 · Automatique</small><h5>TP5 : moteur à courant continu</h5><p>Fonction de transfert du moteur, boucle fermée et régulation de vitesse.</p><ul class="tags"><li>Moteur CC</li><li>Régulation</li></ul></div></div></div><div class="ac"><div class="ac-h"><h4>Prendre en main une carte pour la dépanner et la contrôler</h4></div><p class="lead">Configurer, mesurer et vérifier le comportement d’une carte à microcontrôleur.</p><div class="evs"><div class="evc"><small>BUT 2 · Info 3 (R3.07)</small><h5>PIC24 sur carte Explorer16</h5><p>Horloge et PLL, timers, comparaison de sortie (PWM), capture d’entrée, UART, convertisseur analogique-numérique, afficheur LCD.</p><ul class="tags"><li>PIC24F</li><li>Timers</li><li>UART</li></ul></div><div class="evc"><small>BUT 2 · Info 3 (R3.07)</small><h5>Contrôle au banc avec l’ADALM2000</h5><p>Mesure des signaux avec l’oscilloscope Scopy et diagnostic des pannes courantes (liaison série, signal absent).</p><ul class="tags"><li>ADALM2000</li><li>Scopy</li><li>PuTTY</li></ul></div></div></div>
 
- <div class="cols">
+ <div class="cmp-h"><span>Axe</span><h3>Électrotechnique</h3></div>
+ <div class="ac"><div class="ac-h"><h4>Concevoir et câbler la puissance et la commande</h4></div><p class="lead">Du schéma électrique à la maquette câblée et testée.</p><div class="evs"><div class="evc"><small>Projet 2 · Puissance et commande</small><h5>Schémas de la partie puissance et de la partie commande</h5><p>Réalisation des schémas du volet roulant (pont en H KM2/KM3, protections, fins de course, automate).</p><ul class="tags"><li>Schéma électrique</li><li>Contacteurs</li></ul></div><div class="evc"><small>TP d’électrotechnique</small><h5>Transformateurs</h5><p>Étude des transformateurs en régime sinusoïdal, monophasé et triphasé.</p><ul class="tags"><li>Monophasé</li><li>Triphasé</li></ul></div><div class="evc"><small>TP d’électrotechnique</small><h5>Machines tournantes à courant alternatif</h5><p>Étude des machines alternatives et des bases de l’électrotechnique.</p><ul class="tags"><li>Machines AC</li></ul></div></div></div>
+
+ <div class="cols" style="margin-top:2rem">
   <div class="box"><h3>Habilitation électrique</h3><p>Niveaux B0/B1 : je peux intervenir à proximité de composants sous tension en respectant les règles de sécurité (consignation, protections, équipements individuels).</p></div>
   <div class="box"><h3>Savoir-être</h3><p>Travail en équipe sur chaque projet, rigueur dans les essais, communication claire à l’oral et à l’écrit. <a href="#experiences">Voir mes expériences</a>.</p></div>
  </div>
